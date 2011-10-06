@@ -242,7 +242,13 @@ class uDocuments extends uDataModule {
 		$mail->IsHTML(true);
 		$mail->AddCustomHeader("X-MSMail-Priority: Medium\r\n");
 		$mail->AddCustomHeader("Importance: Medium\r\n");
-      
+
+		$obj = utopia::GetInstance('uDocumentAttachmentList');
+		$attachments = $obj->GetRows(array('doc_id'=>$ident));
+		foreach ($attachments as $attachment) {
+			$mail->AddStringAttachment($attachment['attachment'],$attachment['attachment_filename'],'base64',$attachment['attachment_filetype']);
+		}
+
 		try {
 			foreach ($data as $item) {
 				$mail->ClearAllRecipients();
