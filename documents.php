@@ -36,7 +36,6 @@ class uDocumentDetails extends uSingleDataModule implements iAdminModule {
 	public function GetTabledef() { return 'tabledef_Documents'; }
 
 	public function SetupParents() {
-		$this->AddParent('uDocumentList');
 		$this->AddParent('uDocumentList','ident','*');
 	}
 
