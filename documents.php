@@ -178,7 +178,7 @@ class uDocuments extends uDataModule {
 			return;
 		}*/
 
-		$obj = utopia::GetInstance(GetCurrentModule());
+		$obj = utopia::GetInstance(utopia::GetCurrentModule());
 		$dataset = $obj ->GetDataset();
 		$data = GetRows($dataset);
 		switch (intval($doc['type'])) {
