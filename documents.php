@@ -62,7 +62,7 @@ class uDocumentList extends uListDataModule implements iAdminModule {
 	public function GetTabledef() { return 'tabledef_Documents'; }
 
 	public function SetupParents() {
-		$this->AddParent('internalmodule_Admin');
+		$this->AddParent('');
 	}
 
 	public function SetupFields() {
